@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 from general_classes import Creature
 from general_classes import Taxonomy
 
