@@ -1,8 +1,0 @@
-An account has been made for you on Speak Easy.
-
-You can login with the following credentials:
-username: {{ user.username }}
-password: {{ password }}
-
-Sincerely,
-    Speak Easy Team

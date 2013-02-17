@@ -1,3 +1,0 @@
-PERMISSIONS_TEST = ['perm1', 'perm2']
-PERMISSION_TEST_STRING = 'perm1'
-
