@@ -5,7 +5,7 @@ class Object():
     def __init__(self):
         self.properties = {
             'name': '',
-            }
+        }
 
     def set_properties(self, data):
         for key in self.properties:
