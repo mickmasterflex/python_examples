@@ -5,12 +5,14 @@ from general_classes import Creature
 from general_classes import Object
 from specific_classes import Lion
 
+
 def wait():
     raw_input('\nPress Enter to continue...\n\n')
 
+
 def create_an_object():
     my_object_properties = {
-        'name': 'creature'
+        'name': 'creature',
     }
 
     object = Object()
@@ -20,11 +22,12 @@ def create_an_object():
 
     wait()
 
+
 def create_a_creature():
     my_creature_properties = {
         'name': 'Lion',
         'mass': '225 kg',
-        'classification': 'animal'
+        'classification': 'animal',
     }
     creature = Creature()
 
@@ -33,11 +36,12 @@ def create_a_creature():
 
     wait()
 
+
 def create_a_lion():
     my_lion_properties = {
         'name': 'Lion',
         'mass': '225 kg',
-        'classification': 'animal'
+        'classification': 'animal',
     }
     my_lion_taxonomy = {
         'Domain': 'Eukaryote',
@@ -47,7 +51,7 @@ def create_a_lion():
         'Order': 'Carnivora',
         'Family': 'Felidae',
         'Genus': 'Panthera',
-        'Species': 'Panthera leo'
+        'Species': 'Panthera leo',
     }
 
     lion = Lion()
@@ -66,12 +70,8 @@ def create_a_lion():
 
 
 if __name__ == '__main__':
-
     wait()
-
     # How to instantiate and use classes
     create_an_object()
-
     create_a_creature()
-
     create_a_lion()
