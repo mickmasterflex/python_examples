@@ -1,8 +1,10 @@
 #!/usr/bin/python
 from __future__ import unicode_literals
 
+
 def wait():
     raw_input('\nPress Enter to continue...\n\n')
+
 
 def simple_types():
     
@@ -13,7 +15,7 @@ def simple_types():
     # Let's wait a moment before moving on
     wait()
     
-    # Escape characters are needed occassionally
+    # Escape characters are needed occasionally
     escapes = 'Notice the escape character is \\.'
     print escapes
     
@@ -74,6 +76,7 @@ def simple_types():
     # Let's wait a moment before moving on
     wait()
 
+
 def for_loops():
     
     # Let's get something to loop through
@@ -100,6 +103,7 @@ def for_loops():
     
     # Let's wait a moment before moving on
     wait()
+
 
 def advanced_types():
     
