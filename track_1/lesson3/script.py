@@ -119,3 +119,79 @@ while tmp < 10:
     print tmp
     tmp += 1
 wait()
+
+
+def advanced_types():
+
+    # Constants are always ALL_CAPS
+    LOCATION = "here"
+    TIME = "now"
+
+    # Tuples are immutable sequences
+    CHOICES = (LOCATION, TIME)
+
+    for choice in CHOICES:
+        print choice
+
+    # Let's wait a moment before moving on
+    wait()
+
+    # All container types can be embedded
+    CHOICES = (
+        (LOCATION, 'Here'),
+        (TIME, 'Now'),
+    )
+
+    for choice in CHOICES:
+        print choice[1]
+
+    # Let's wait a moment before moving on
+    wait()
+
+    # Avoid "magic numbers"
+    CHOICE_VALUE = 1
+    for choice in CHOICES:
+        print choice[CHOICE_VALUE]
+
+    # Let's wait a moment before moving on
+    wait()
+
+    # Dictionaries are arguably the most powerful container in Python
+    test_dict = {}
+    CHOICE_CONSTANT = 0
+    for choice in CHOICES:
+        test_dict[choice[CHOICE_CONSTANT]] = choice[CHOICE_VALUE]
+
+    # Notice there is no certain order when going through a dictionary
+    for item in test_dict:
+        print 'test_dict[{0}] = {1}'.format(item, test_dict[item])
+
+    # Let's wait a moment before moving on
+    wait()
+
+    # More with dictionaries
+    first_name = 'Rico'
+    last_name = 'Cordova'
+    phone = '720-984-1569'
+    test_dict = {
+        'First Name': first_name,
+        'Last Name': last_name,
+        'Phone': phone,
+    }
+
+    for item in test_dict:
+        print 'test_dict[{0}] = {1}'.format(item, test_dict[item])
+
+
+if __name__ == '__main__':
+    
+    wait()    
+    
+    # Simple types
+    simple_types()
+    
+    # Learn to use for loops
+    for_loops()
+    
+    # More advance types
+    advanced_types()
