@@ -1,10 +1,7 @@
 #!/usr/bin/python
-import os
+from utils.utils import wait
 
-
-def wait():
-    raw_input('\nPress Enter to continue...\n\n')
-    os.system(['clear', 'cls'][os.name == 'nt'])
+wait()
 
 # Standard string
 test_string = 'Strings start with \' and end with \'.'
@@ -73,9 +70,9 @@ wait()
 
 # Let's look at lists
 test_list = list()
-test_list.append(test_number)
-test_list.append(test_string)
-test_list.append(test_string2)
+test_list.append('item 1')
+test_list.append('item 2')
+test_list.append('item 3')
 
 # Indexed from zero
 print test_list[0]
@@ -119,3 +116,13 @@ while tmp < 10:
     print tmp
     tmp += 1
 wait()
+
+# Exercise: Create a while loop to find a random number
+item_found = False
+search_value = '32'
+import random
+while not item_found:
+    item = random.randint(1, 50)
+    if str(item) == search_value:
+        item_found = True
+        print item
