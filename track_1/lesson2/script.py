@@ -126,3 +126,56 @@ while not item_found:
     if str(item) == search_value:
         item_found = True
         print item
+wait()
+
+# Open a file for writing
+my_file = open('example.txt', 'w')
+my_file.write('line 1')
+my_file.write('line 2')
+try:
+    my_file.write(3)
+except TypeError:
+    print 'Must write strings to files.'
+my_file.close()
+wait()
+
+# Open the same file for reading
+my_file = open('example.txt', 'r')
+print my_file.readline()
+my_file.close()
+wait()
+
+# Let's rewrite the file with newlines
+my_file = open('example.txt', 'w')
+my_file.write('line 1\n')
+my_file.write('line 2\n')
+my_file.close()
+
+# Let's make sure the newlines worked
+my_file = open('example.txt', 'r')
+print my_file.readline()
+my_file.close()
+wait()
+
+# Let's read all the lines instead of the first one
+my_file = open('example.txt', 'r')
+for line in my_file.readlines():
+    print line
+my_file.close()
+wait()
+
+# Let's add a line without having to rewrite the whole file
+# Let's rewrite the file with newlines
+my_file = open('example.txt', 'a')
+my_file.write('line 3\n')
+my_file.close()
+
+# Let's read all the lines again
+my_file = open('example.txt', 'r')
+for line in my_file.readlines():
+    print line
+my_file.close()
+wait()
+
+import os
+os.remove('example.txt')
