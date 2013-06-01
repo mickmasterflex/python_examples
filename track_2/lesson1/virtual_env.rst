@@ -7,11 +7,9 @@ This guide will help you set up your virtual environment.
 Linux Installation (Ubuntu/Debian)
 ==================================
 
-By following these steps, you can easily create a virtual environment.
+By following these steps, you can easily create a virtual environment and setup a database for your Django project.
 
-.. note::
-
-   A dollar sign ($) indicates a terminal prompt, as your user, not root.
+.. attention::  **A dollar sign ($) indicates a terminal prompt, as your user, not root.**
 
 1.  Install some required packages::
 
