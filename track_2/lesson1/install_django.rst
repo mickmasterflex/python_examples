@@ -24,8 +24,7 @@ By following these steps, you can easily install and setup a Django project.
 
         $ django-admin.py startproject <project_name>
 
-4  Add the following to the end of the file
-    **~/.virtualenvs/<virtual_env_name>/bin/activate**::
+4  Add the following to the end of the file *~/.virtualenvs/<virtual_env_name>/bin/activate*::
 
         export DJANGO_SETTINGS_MODULE=<project_name>.settings
         export PYTHONPATH=$PYTHONPATH:~/path/to/django/app
