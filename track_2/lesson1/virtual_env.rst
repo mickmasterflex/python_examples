@@ -30,44 +30,38 @@ By following these steps, you can easily create a virtual environment and setup 
 
 5.  Create your new virtualenv::
 
-        $ mkvirtualenv python_class
+        $ mkvirtualenv <virtual_env_name>
 
-6.  Add the following to the end of the file
-    **~/.virtualenvs/proton/bin/activate**::
+6.  Activate the proton virtualenv::
 
-        export DJANGO_SETTINGS_MODULE=todo.settings.dev
-        export PYTHONPATH=$PYTHONPATH:~/python_class/my_site/my_site/apps
+        $ workon <virtual_env_name>
 
-7.  Activate the proton virtualenv::
-
-        $ workon python_class
-
-8.  Install the required python libraries for your project::
+7.  Install the required python libraries for your project::
 
         $ pip install -r ~/python_class/my_site/REQUIREMENTS.pip
 
-9.  Configure your database::
+8.  Configure your database::
 
         $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 
-10.  Become the postgres user and create a project user and database::
+9.  Become the postgres user and create a project user and database::
 
         $ sudo su - postgres
         $ createuser <project_username>
         $ createdb -O <project_username> <project_name>
         $ psql <project_username>
 
-11.  Edit the file **/etc/postgresql/9.1/main/pg_hba.conf** and add the following to the bottom of the file::
+10. Edit the file **/etc/postgresql/9.1/main/pg_hba.conf** and add the following to the bottom of the file::
 
         local    <project_username>    <db_name>    trust
 
-12.  Reload postgres::
+11. Reload postgres::
 
         $ sudo service postgresql reload
 
-13. Run the Django development server::
+12. Run the Django development server::
 
         $ django-admin.py runserver
 
-14. Copy the address the development server reports that it's running on
+13. Copy the address the development server reports that it's running on
     (for example, **http://127.0.0.1:8000/**) and paste it in your browser.
