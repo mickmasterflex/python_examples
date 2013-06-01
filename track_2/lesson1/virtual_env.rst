@@ -11,8 +11,6 @@ Linux Installation (Ubuntu/Debian)
 
 By following these steps, you can easily create a virtual environment and setup a database for your Django project.
 
-.. attention::  **A dollar sign ($) indicates a terminal prompt, as your user, not root.**
-
 1.  Install some required packages::
 
         $ sudo apt-get install python python-dev python-pip
