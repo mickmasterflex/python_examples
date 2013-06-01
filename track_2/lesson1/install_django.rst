@@ -9,7 +9,7 @@ Linux Installation (Ubuntu/Debian)
 
 By following these steps, you can easily install and setup a Django project.
 
-.. attention::  **Be sure to setup your virtual environment first: :ref:`virtual-environment-setup`**
+.. attention::  Be sure to setup your virtual environment first: :ref:`virtual-environment-setup`
 
 1.  First make sure you are in a virtual environment::
 
