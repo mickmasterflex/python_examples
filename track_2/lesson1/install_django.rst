@@ -47,7 +47,6 @@ By following these steps, you can easily install and setup a Django project.
         $ sudo su - postgres
         $ createuser <project_username>
         $ createdb -O <project_username> <project_name>
-        $ psql <project_username>
 
 11.  Edit the file **/etc/postgresql/9.1/main/pg_hba.conf** and add the following to the bottom of the file::
 
