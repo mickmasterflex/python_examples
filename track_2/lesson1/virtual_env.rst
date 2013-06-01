@@ -1,3 +1,5 @@
+.. _virtual-environment-setup:
+
 ==========================
 Environment Setup
 ==========================
