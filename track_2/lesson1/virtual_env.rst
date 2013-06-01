@@ -57,11 +57,11 @@ By following these steps, you can easily create a virtual environment and setup 
         $ createdb -O <project_username> <project_name>
         $ psql <project_username>
 
-11.  Edit the file **/etc/postgresql/9.1/main/pg_hba.conf** and add the following to the bottom of the file:
+11.  Edit the file **/etc/postgresql/9.1/main/pg_hba.conf** and add the following to the bottom of the file::
 
         local    <project_username>    <db_name>    trust
 
-12.  Reload postgres:
+12.  Reload postgres::
 
         $ sudo service postgresql reload
 
