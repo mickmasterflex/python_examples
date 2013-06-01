@@ -29,33 +29,44 @@ By following these steps, you can easily install and setup a Django project.
 
         export DJANGO_SETTINGS_MODULE=<project_name>.settings
         export PYTHONPATH=$PYTHONPATH:~/path/to/django/app
-
-7.  Activate the proton virtualenv::
+        
+5.  Activate the proton virtualenv::
 
         $ workon python_class
 
-8.  Install the required python libraries for your project::
+6.  Install the required python libraries for your project::
 
         $ pip install -r ~/python_class/my_site/REQUIREMENTS.pip
 
-9.  Configure your database::
+7.  Configure your database::
 
         $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 
-10.  Become the postgres user and create a project user and database::
+8.  Become the postgres user and create a project user and database::
 
         $ sudo su - postgres
-        $ createuser <project_username>
-        $ createdb -O <project_username> <project_name>
+        $ createuser <db_username>
+        $ createdb -O <db_username> <db_name>
+        $ psql <db_username>
+        =# CREATE EXTENSION hstore;
+        =#\q
 
-11.  Edit the file **/etc/postgresql/9.1/main/pg_hba.conf** and add the following to the bottom of the file::
+9.  Edit the file **/etc/postgresql/9.1/main/pg_hba.conf** and add the following to the bottom of the file::
 
         local    <project_username>    <db_name>    trust
 
-12.  Reload postgres::
+10. Reload postgres::
 
         $ sudo service postgresql reload
 
+11. Install pyscopg2 (Python library)::
+        
+        $ pip install psycopg2
+        
+12. Let's sync the DB with Django::
+
+        $ django-admin.py syncdb
+        
 13. Run the Django development server::
 
         $ django-admin.py runserver
