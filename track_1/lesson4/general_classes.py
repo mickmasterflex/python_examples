@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 
-class Object():
+class Object(object):
     def __init__(self):
         self.properties = {
             'name': '',
@@ -16,7 +16,7 @@ class Object():
             print '{0} - {1}'.format(key, self.properties[key])
 
 
-class Creature(Object):
+class ClassifiedObject(Object):
     def __init__(self):
         self.properties = {
             'name': '',
@@ -25,11 +25,11 @@ class Creature(Object):
         }
 
 
-class Taxonomy():
+class Taxonomy(object):
     def __init__(self):
         self.taxonomy = {
             'Domain': '',
-            'Kingom': '',
+            'Kingdom': '',
             'Phylum': '',
             'Class': '',
             'Order': '',

@@ -1,13 +1,14 @@
 #!/usr/bin/python
 from __future__ import unicode_literals
+import os
 
-from general_classes import Creature
-from general_classes import Object
-from specific_classes import Lion
+from general_classes import ClassifiedObject, Object
+from specific_classes import Creature
 
 
 def wait():
     raw_input('\nPress Enter to continue...\n\n')
+    os.system(['clear', 'cls'][os.name == 'nt'])
 
 
 def create_an_object():
@@ -16,34 +17,30 @@ def create_an_object():
     }
 
     object = Object()
-
     object.set_properties(my_object_properties)
     object.print_properties()
-
     wait()
 
 
 def create_a_creature():
     my_creature_properties = {
-        'name': 'Lion',
+        'name': 'Michael Hollowburton',
         'mass': '225 kg',
         'classification': 'animal',
     }
-    creature = Creature()
-
+    creature = ClassifiedObject()
     creature.set_properties(my_creature_properties)
     creature.print_properties()
-
     wait()
 
 
 def create_a_lion():
-    my_lion_properties = {
-        'name': 'Lion',
+    properties = {
+        'name': 'Michael Hollowburton',
         'mass': '225 kg',
         'classification': 'animal',
     }
-    my_lion_taxonomy = {
+    taxonomy = {
         'Domain': 'Eukaryote',
         'Kingdom': 'Animalia',
         'Phylum': 'Chordata',
@@ -53,19 +50,25 @@ def create_a_lion():
         'Genus': 'Panthera',
         'Species': 'Panthera leo',
     }
-
-    lion = Lion()
-
-    lion.set_properties(my_lion_properties)
-    lion.set_taxonomy(my_lion_taxonomy)
-
-    lion.print_properties()
+    lion1 = Creature()
+    lion1.set_properties(properties)
+    lion1.set_taxonomy(taxonomy)
+    lion1.print_properties()
     wait()
 
-    lion.print_taxonomy()
+    lion1.print_taxonomy()
     wait()
 
-    lion.print_all_properties()
+    lion1.print_all_properties()
+    wait()
+
+    # Let's see the power of instantiation
+    lion2 = Creature()
+    properties['name'] = 'Emily McCarrol'
+    properties['mass'] = '175 kg'
+    lion2.set_properties(properties)
+    lion2.set_taxonomy(taxonomy)
+    lion2.print_all_properties()
     wait()
 
 
