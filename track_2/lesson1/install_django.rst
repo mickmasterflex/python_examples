@@ -49,7 +49,7 @@ By following these steps, you can easily install and setup a Django project.
 7. Let's sync the DB with Django::
 
         $ django-admin.py syncdb
-        .. attention:: When asked if you should create a superuser say **yes**.
+.. attention:: When asked if you should create a superuser say **yes**.
         
 8. Run the Django development server::
 
