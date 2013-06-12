@@ -16,7 +16,8 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/tmp/example_django_sqlite/apples_to_apples.db',
+        'NAME': '/home/ricomoss/workspace/python_class/'
+                'track_2/apples_to_apples/apples_to_apples.db',
     }
 }
 
@@ -126,7 +127,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     # our apps
-    'common'
+    'accounts',
+    'common',
 )
 
 # A sample logging configuration. The only tangible logging
