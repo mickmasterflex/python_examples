@@ -2,9 +2,11 @@
 
 import os.path
 import sys
-PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..')
 
-DEBUG = True
+PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..')
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
+
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -14,11 +16,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/ricomoss/workspace/python_class/'
-                'track_2/apples_to_apples/apples_to_apples.db',
-    }
+    'default': dict(),
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -67,6 +65,9 @@ STATIC_ROOT = ''
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
+# Allows us to set User properties
+AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
@@ -103,9 +104,6 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'apples_to_apples.urls'
-
-# Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'apples_to_apples.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

@@ -6,8 +6,18 @@ from django.contrib import messages
 from django.utils.translation import ugettext as _
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.contrib.auth.models import User
 
 from accounts.mixins import LoginRequiredMixin
+
+
+class IndexView(LoginRequiredMixin, TemplateView):
+    template_name = 'accounts/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['users'] = User.objects.all()
+        return context
 
 
 def login(request):
@@ -37,12 +47,3 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('accounts:login'))
-
-
-class IndexView(LoginRequiredMixin, TemplateView):
-    template_name = 'accounts/index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(**kwargs)
-        return render_to_response(
-            self.template_name, context, RequestContext(self.request))
