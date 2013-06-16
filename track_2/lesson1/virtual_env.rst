@@ -17,16 +17,20 @@ By following these steps, you can easily create a virtual environment and setup 
 
 2.  Install virtualenv and virtualenvwrapper::
 
-        $ pip install virtualenv
-        $ pip install virtualenvwrapper
+        $ sudo pip install virtualenv
+        $ sudo pip install virtualenvwrapper
 
-3.  Add the following to the end of your **~/.bashrc** file::
+3.  Add the following to the end of your **~/.bashrc** file (or ~/.bash_profile for Mac - you may need to create it)::
 
         source /usr/local/bin/virtualenvwrapper.sh
 
 4.  Type the following::
 
-        $ source /usr/local/bin/virtualenvwrapper.sh
+        $ source ~/.bashrc
+
+    or, if needed::
+
+        $ source ~/.bash_profile
 
 5.  Create your new virtualenv::
 
